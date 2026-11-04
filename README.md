@@ -47,7 +47,7 @@ $$\mathbf{\text{Actual Revenue}} = \sum (\text{Product Price} \times \text{Produ
 ### Step 1: Download or Clone
 Clone this repository or download it as a ZIP:
 ```bash
-git clone https://github.com/YOUR_USERNAME/envato-earnings-calculator.git
+git clone https://github.com/ChiragMakkar13/envato-earnings-calculator.git
 ```
 *(If downloaded as a ZIP, extract the folder to your computer).*
 
