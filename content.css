@@ -1,0 +1,430 @@
+/* Envato Author Earnings Calculator - Injected Banner Style */
+
+.eec-container {
+  display: block;
+  margin: 18px 0 24px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.eec-container * {
+  box-sizing: border-box;
+}
+
+.eec-card {
+  background: linear-gradient(135deg, #0b1528 0%, #17243c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: #f1f5f9;
+  padding: 20px 24px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.eec-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981, #06b6d4, #3b82f6);
+}
+
+.eec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.eec-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eec-badge {
+  background: #10b981;
+  color: #064e3b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.eec-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.eec-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eec-label {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.eec-select {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.eec-select:hover, .eec-select:focus {
+  border-color: #10b981;
+  background: #25334a;
+}
+
+.eec-btn-refresh {
+  background: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.eec-btn-refresh:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+.eec-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.eec-stat-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.eec-stat-box:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.eec-stat-box.highlight {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.eec-stat-box.highlight:hover {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.eec-stat-title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.eec-stat-title {
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Tooltip styles */
+.eec-tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: help;
+}
+
+.eec-info-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.eec-tooltip-wrap:hover .eec-info-icon {
+  background: #10b981;
+  color: #064e3b;
+}
+
+.eec-tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #090f1d;
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: normal;
+  width: 220px;
+  z-index: 999999;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+}
+
+.eec-tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #090f1d transparent transparent transparent;
+}
+
+.eec-tooltip-wrap:hover .eec-tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.eec-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.eec-stat-box.highlight .eec-stat-value {
+  color: #34d399;
+}
+
+.eec-stat-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.eec-footer {
+  margin-top: 14px;
+  font-size: 12px;
+  color: #94a3b8;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 10px;
+}
+
+.eec-formula-note {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.eec-btn-breakdown {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #34d399;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.eec-btn-breakdown:hover {
+  background: #10b981;
+  color: #042f2e;
+}
+
+/* Modal Popup for Product Breakdown */
+.eec-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 9999999;
+  align-items: center;
+  justify-content: center;
+}
+
+.eec-modal-overlay.open {
+  display: flex;
+}
+
+.eec-modal {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 680px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+.eec-modal-header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1e293b;
+  background: #17243c;
+}
+
+.eec-modal-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.eec-modal-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.eec-modal-close:hover {
+  color: #ffffff;
+}
+
+.eec-modal-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.eec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.eec-table th {
+  text-align: left;
+  padding: 8px 10px;
+  background: #1e293b;
+  color: #94a3b8;
+  font-weight: 600;
+  border-bottom: 1px solid #334155;
+  position: sticky;
+  top: 0;
+}
+
+.eec-table td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+}
+
+.eec-table tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.eec-table .align-right {
+  text-align: right;
+}
+
+.eec-modal-footer {
+  padding: 14px 20px;
+  background: #17243c;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.eec-modal-footer .grand-total {
+  color: #34d399;
+  font-size: 16px;
+}
+
+.eec-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+.eec-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #10b981;
+  border-radius: 50%;
+  animation: eec-spin 0.8s linear infinite;
+}
+
+@keyframes eec-spin {
+  to { transform: rotate(360deg); }
+}

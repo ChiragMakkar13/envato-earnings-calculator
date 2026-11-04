@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Envato Earnings Calculator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-wrapper">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="header-brand">
+        <div class="logo-icon">$</div>
+        <div>
+          <h1 class="header-title">Envato Earnings</h1>
+          <p class="header-subtitle">CodeCanyon & ThemeForest</p>
+        </div>
+      </div>
+      <div class="currency-picker">
+        <select id="currency-select" class="currency-dropdown" title="Select Display Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="INR">INR (₹)</option>
+          <option value="AUD">AUD (A$)</option>
+          <option value="CAD">CAD (C$)</option>
+          <option value="JPY">JPY (¥)</option>
+          <option value="SGD">SGD (S$)</option>
+          <option value="BRL">BRL (R$)</option>
+          <option value="AED">AED (AED)</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Content State: Active Tab Stats -->
+    <div id="author-state" class="section-card active">
+      <div class="author-info">
+        <span class="status-indicator">● Active Profile</span>
+        <h2 id="author-name" class="author-heading">Loading Author...</h2>
+      </div>
+
+      <div class="earnings-hero">
+        <span class="hero-label">Actual Lifetime Earnings</span>
+        <div id="stat-earnings" class="hero-val">$0.00</div>
+        <span class="hero-sub" id="stat-formula">Sum of each (Price × Sales)</span>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-item" title="Published portfolio items (from Currently Viewing badge)">
+          <span class="stat-name">Products Listed ℹ</span>
+          <span id="stat-products" class="stat-number">0</span>
+        </div>
+        <div class="stat-item" title="Calculated as: Sum of all item prices divided by number of products">
+          <span class="stat-name">Average Price ℹ</span>
+          <span id="stat-avg-price" class="stat-number">$0.00</span>
+        </div>
+        <div class="stat-item" title="All-time completed sales recorded on the author's profile header">
+          <span class="stat-name">Completed Sales ℹ</span>
+          <span id="stat-sales" class="stat-number">0</span>
+        </div>
+        <div class="stat-item" title="Approximate estimate multiplying total sales by the average product price">
+          <span class="stat-name">Approx (Sales × Avg) ℹ</span>
+          <span id="stat-exact" class="stat-number">$0.00</span>
+        </div>
+      </div>
+
+      <div class="action-footer">
+        <button id="btn-refresh" class="btn btn-primary">Refresh Data</button>
+        <button id="btn-open-portfolio" class="btn btn-secondary">Open Portfolio</button>
+      </div>
+    </div>
+
+    <!-- Manual Calculator Mode -->
+    <div class="manual-section">
+      <details>
+        <summary class="manual-summary">Manual / Custom Calculator</summary>
+        <div class="manual-body">
+          <div class="form-row">
+            <label>Total Sales Completed:</label>
+            <input type="number" id="manual-sales" placeholder="e.g. 1312" value="1312" />
+          </div>
+          <div class="form-row">
+            <label>Average Product Price (USD):</label>
+            <input type="number" id="manual-avg-price" step="0.01" placeholder="e.g. 114.13" value="114.13" />
+          </div>
+          <div class="manual-result">
+            <span>Result:</span>
+            <strong id="manual-output">$0.00</strong>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- Instructions / Empty State -->
+    <div id="empty-state" class="empty-state" style="display: none;">
+      <p>Navigate to any author portfolio on <strong>codecanyon.net</strong> or <strong>themeforest.net</strong> to automatically view earnings.</p>
+      <a href="https://codecanyon.net/user/go-web/portfolio" target="_blank" class="sample-link">Example: Go-Web on CodeCanyon &rarr;</a>
+    </div>
+
+    <footer class="popup-footer">
+      <span>Real-time FX Rates via Open Exchange</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
