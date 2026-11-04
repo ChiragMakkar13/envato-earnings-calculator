@@ -101,6 +101,14 @@ envato-earnings-calculator/
 └── README.md           # Documentation
 ```
 
+## Screenshot
+Only be visible and work on user portfolio page. e.g. https://codecanyon.net/user/scripteo/portfolio
+<img width="1000" height="586" alt="Screenshot 2026-11-05 at 4 07 03 AM" src="https://github.com/user-attachments/assets/dd2526fc-77ae-4249-9069-1e0d4eb98345" />
+
+When you click on extension button:
+
+<img width="538" height="546" alt="Screenshot 2026-11-05 at 4 08 42 AM" src="https://github.com/user-attachments/assets/a3da3199-63fc-4c47-8bda-77a4b18488eb" />
+
 ---
 
 ## 💡 Contributing
